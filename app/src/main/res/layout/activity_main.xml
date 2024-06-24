@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="#D81B60"
+    >
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/task1"
+        />
+    <TextView
+        android:padding="10dp"
+        android:layout_width="356dp"
+        android:layout_height="65dp"
+        android:text="Taskify"
+        android:textSize="27dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        />
+</Toolbar>
+    <EditText
+
+        android:id="@+id/edTask1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/custom_shape"
+        android:drawableTintMode="multiply"
+        android:ems="10"
+        android:hint="Task Name"
+        android:gravity="center"
+        android:inputType="text|textAutoCorrect"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/CalenderButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/edDate1"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/edTask1"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:paddingLeft="8dp"
+        android:background="@drawable/custom_shape"
+        android:hint="Task Completion Date "
+        android:gravity="center"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTask1" />
+
+    <EditText
+        android:hint="Task Completion Time "
+        android:gravity="center"
+        android:id="@+id/edTime1"
+        android:layout_width="210dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/edDate1"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custom_shape"
+        android:ems="10"
+        android:inputType="text"
+        android:paddingLeft="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTask1" />
+
+    <ImageView
+        android:id="@+id/CalenderButton"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_below="@id/edTask1"
+android:layout_alignParentEnd="true"
+        android:layout_marginEnd="134dp"
+        android:layout_marginBottom="4dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toStartOf="@+id/TimeButton"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/edDate1"
+        app:srcCompat="@mipmap/calender1" />
+
+    <ImageView
+        android:layout_marginTop="17dp"
+        android:id="@+id/TimeButton"
+        android:layout_width="46dp"
+        android:layout_below="@id/edDate1"
+        android:layout_height="46dp"
+        android:layout_marginEnd="134dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="@+id/edDate1"
+        app:srcCompat="@drawable/clock"
+        android:layout_alignParentEnd="true"
+
+        />
+
+
+    <Button
+        android:id="@+id/addTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="130dp"
+        android:backgroundTint="#D81B60"
+        android:text="Add Task" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/edTime1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edDate1"
+        app:layout_constraintVertical_bias="0.266"
+        tools:listitem="@layout/custom_design_recycle" />
+
+
+</RelativeLayout>
